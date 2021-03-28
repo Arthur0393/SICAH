@@ -118,7 +118,7 @@ ini_set('session.bug_compat_warn',"0");
                   if (isset($_POST['id_carrera'])){
                     $carrera = $_POST['id_carrera'];
                     
-                    $Seani->TablePTCAdminPorCarrera($carrera, 21)
+                    $Seani->TablePTCAdminPorCarrera($carrera, 21);
                     /*$sql = "SELECT abreviatura from carreras where id=$carrera";
                     $result = mysql_query($sql);
                     $fila = mysql_fetch_row($result);

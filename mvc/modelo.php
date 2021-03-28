@@ -2458,6 +2458,23 @@ function TablePTCAdminPorCarrera($carrera, $periodo){
 	$this->ptcVSpaPorCarrera($carrera,$fila[0],$periodo); //se agrega parametro
 	echo "</table>";
 }
+
+function TablePTCAdminPorDirector($idusuario, $periodo){
+	$sqlx = "SELECT carrera from director_carrera where user_ide=$idusuario;";
+	$resultx = $this->con->query($sqlx);
+	//$i=0;
+	echo "<table class='table table-bordered table-striped'>";
+	echo "<tr><th>Carrera</th><th>Horas de PTC</th><th>Horas de PA</th><th>Horas de Administrativos</th></tr>";
+	while($filax = $resultx->fetch_row()){ 
+	# code...                        
+		$sql = "SELECT abreviatura from carreras where id=".$filax[0].";";
+		$result = $this->con->query($sql);
+		$abrevia = $result->fetch_row();
+		$this->ptcVSpaporCarrera($filax[0],$abrevia[0],$periodo);     //se agrega parametro
+	//echo '<hr>';
+	}
+	echo "</table>";
+}
     
 function CarreraPorDirector($idDirector) {
 					$sql = "SELECT carreras.id, carreras.nombre, carreras.nivel,carreras.abreviatura  

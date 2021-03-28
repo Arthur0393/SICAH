@@ -141,20 +141,20 @@ ini_set('session.bug_compat_warn',"0");
 
                 <div id="divCuenta" style="display:none">
                     <?php
-                        $sqlx = "SELECT carrera from director_carrera where user_ide=$idusuario;";
+
+                    $Seani->TablePTCAdminPorDirector($idusuario, 21);
+
+                    /*    $sqlx = "SELECT carrera from director_carrera where user_ide=$idusuario;";
                         $resultx = mysql_query($sqlx);
-                        //$i=0;
                         echo "<table class='table table-bordered table-striped'>";
                         echo "<tr><th>Carrera</th><th>Horas de PTC</th><th>Horas de PA</th><th>Horas de Administrativos</th></tr>";
                         while($filax=mysql_fetch_row($resultx)){ 
-                        # code...                        
                             $sql = "SELECT abreviatura from carreras where id=".$filax[0].";";
                             $result = mysql_query($sql);
                             $abrevia = mysql_fetch_row($result);
-                            $Seani->ptcVSpaporCarrera($filax[0],$abrevia[0],21);     //se agrega parametro
-                        //echo '<hr>';
+                            $Seani->ptcVSpaporCarrera($filax[0],$abrevia[0],21);
                         }
-                        echo "</table>";
+                        echo "</table>";*/
                     ?>
                 <!--<hr>
                   <?php //echo $ConsultaHoras = $Seani->ptcVSpa(21); //se agreg parametro?>

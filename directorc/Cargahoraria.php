@@ -151,13 +151,13 @@ ini_set('session.bug_compat_warn',"0");
                             $sql = "SELECT abreviatura from carreras where id=".$filax[0].";";
                             $result = mysql_query($sql);
                             $abrevia = mysql_fetch_row($result);
-                            $Seani->ptcVSpaporCarrera($filax[0],$abrevia[0],20);     //se agrega parametro
+                            $Seani->ptcVSpaporCarrera($filax[0],$abrevia[0],21);     //se agrega parametro
                         //echo '<hr>';
                         }
                         echo "</table>";
                     ?>
                 <!--<hr>
-                  <?php //echo $ConsultaHoras = $Seani->ptcVSpa(20); //se agreg parametro?>
+                  <?php //echo $ConsultaHoras = $Seani->ptcVSpa(21); //se agreg parametro?>
                 <hr>-->
               </div>
 
@@ -194,7 +194,7 @@ ini_set('session.bug_compat_warn',"0");
                 </thead>
                 <tbody align="center">
 
-                  <?php   echo   $DatosPersonaleTabla = $Seani->ReporteporDirector($idusuario,20); //se agregó parametro    ?>     
+                  <?php   echo   $DatosPersonaleTabla = $Seani->ReporteporDirector($idusuario,21); //se agregó parametro    ?>     
 
                 </tbody>
               </table>

@@ -116,16 +116,18 @@ ini_set('session.bug_compat_warn',"0");
                 <hr>
                   <?php  
                   if (isset($_POST['id_carrera'])){
-                            $carrera = $_POST['id_carrera'];
-                            $sql = "SELECT abreviatura from carreras where id=$carrera";
-                            $result = mysql_query($sql);
-                            $fila = mysql_fetch_row($result);
-                            echo "<table class='table table-bordered table-striped' >";
-                            echo "<tr><th>Carrera</th><th>Horas de PTC</th><th>Horas de PA</th><th>Horas de Administrativos</th></tr>";
-                            $Seani->ptcVSpaPorCarrera($carrera,$fila[0],21); //se agrega parametro
-                            echo "</table>";
-                          }
-                             ?>
+                    $carrera = $_POST['id_carrera'];
+                    
+                    $Seani->TablePTCAdminPorCarrera($carrera, 21)
+                    /*$sql = "SELECT abreviatura from carreras where id=$carrera";
+                    $result = mysql_query($sql);
+                    $fila = mysql_fetch_row($result);
+                    echo "<table class='table table-bordered table-striped' >";
+                    echo "<tr><th>Carrera</th><th>Horas de PTC</th><th>Horas de PA</th><th>Horas de Administrativos</th></tr>";
+                    $Seani->ptcVSpaPorCarrera($carrera,$fila[0],21); //se agrega parametro
+                    echo "</table>";*/
+                  }
+                  ?>
                 <hr>
               </div>
 

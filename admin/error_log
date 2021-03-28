@@ -1,0 +1,32 @@
+[26-Mar-2014 23:34:27 America/Chicago] PHP Fatal error:  Call to undefined method Seani::ObtenerDatosDocentes() in /home/uttlaxca/public_html/siseac/admin/AdminDocentes.php on line 134
+[04-Apr-2014 18:05:51 America/Chicago] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 259
+[04-Apr-2014 18:07:06 America/Chicago] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 308
+[30-Jul-2014 09:50:38 America/Chicago] PHP Fatal error:  Call to undefined method Seani::ObtenerDatosResultadosSerie() in /home/uttlaxca/public_html/siseac/admin/index.php on line 148
+[31-Jul-2014 13:59:51 America/Chicago] PHP Fatal error:  Call to undefined method Seani::ObtenerDatosResultadosSerie() in /home/uttlaxca/public_html/siseac/admin/index.php on line 148
+[31-Jul-2014 13:59:53 America/Chicago] PHP Fatal error:  Call to undefined method Seani::ObtenerDatosResultadosSerie() in /home/uttlaxca/public_html/siseac/admin/index.php on line 148
+[20-Aug-2014 12:14:20 America/Chicago] PHP Parse error:  syntax error, unexpected $end in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 2045
+[20-Aug-2014 12:14:33 America/Chicago] PHP Parse error:  syntax error, unexpected $end in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 2045
+[20-Aug-2014 12:34:05 America/Chicago] PHP Parse error:  syntax error, unexpected $end in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 2045
+[20-Aug-2014 12:37:13 America/Chicago] PHP Parse error:  syntax error, unexpected $end in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 2045
+[20-Aug-2014 12:37:21 America/Chicago] PHP Parse error:  syntax error, unexpected $end in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 2045
+[20-Aug-2014 12:37:27 America/Chicago] PHP Parse error:  syntax error, unexpected $end in /home/uttlaxca/public_html/siseac/mvc/modelo.php on line 2045
+[18-Nov-2014 10:27:40 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:29:52 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:37:02 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:39:30 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:39:36 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:42:20 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:45:23 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:46:56 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:47:05 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:47:11 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:51:00 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:54:34 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:54:55 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:55:16 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:57:08 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 10:59:02 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 11:02:33 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 11:03:22 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 11:03:41 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6
+[18-Nov-2014 11:15:05 America/Chicago] PHP Fatal error:  Class 'Seani' not found in /home/uttlaxca/public_html/siseac/admin/include/header.php on line 6

@@ -122,7 +122,7 @@ ini_set('session.bug_compat_warn',"0");
                             $fila = mysql_fetch_row($result);
                             echo "<table class='table table-bordered table-striped' >";
                             echo "<tr><th>Carrera</th><th>Horas de PTC</th><th>Horas de PA</th><th>Horas de Administrativos</th></tr>";
-                            $Seani->ptcVSpaPorCarrera($carrera,$fila[0],20); //se agrega parametro
+                            $Seani->ptcVSpaPorCarrera($carrera,$fila[0],21); //se agrega parametro
                             echo "</table>";
                           }
                              ?>

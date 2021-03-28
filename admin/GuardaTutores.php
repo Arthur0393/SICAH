@@ -96,7 +96,7 @@ $descripcionTutor= $descripcion1t . $ngrupo[$i]." de la carrera. $id_carrera[$i]
 
 
 //$Seani->VerificaDesgloseCarga(3,$tutor[$i],$id_conceptoTutor,$id_carrera[$i],$fecha,$horas_asignadasTutor,$descripcionTutor);
-$Seani->VerificaDesgloseCargaTutores(20,$tutor[$i],$id_conceptoTutor, $id_carrera[$i],$grupoTutor[$i], $fecha, $horas_asignadasTutor,$descripcionTutor);  
+$Seani->VerificaDesgloseCargaTutores(21,$tutor[$i],$id_conceptoTutor, $id_carrera[$i],$grupoTutor[$i], $fecha, $horas_asignadasTutor,$descripcionTutor);  
                              
  $Seani->VerificaListaTutores($tutor[$i],$grupoTutor[$i],$fecha,$id_periodo);
       $i++;

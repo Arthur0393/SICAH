@@ -17,7 +17,7 @@ if($_POST['opcion']==1)
 	$id_carrera=$_POST['idcarrera'];
 	$id_concepto = $_POST['conceptosCH'];
 
-	$idregresado = $Seani->obtieneIdProyecto($id_carrera,$id_docente,$id_concepto,20);	//se agregó parametro
+	$idregresado = $Seani->obtieneIdProyecto($id_carrera,$id_docente,$id_concepto,21);	//se agregó parametro
 
 	echo $idregresado; 
 
@@ -34,7 +34,7 @@ if($_POST['opcion']==1)
 
         $actualizacion = date('Y-m-d H:i:s');
 
-  		$Seani->VerificaCargaIndividual(20,$id_docente,$id_concepto, $id_carrera, $actualizacion, $horas_asignadas, $descripcion); 
+  		$Seani->VerificaCargaIndividual(21,$id_docente,$id_concepto, $id_carrera, $actualizacion, $horas_asignadas, $descripcion); 
 
 } else if ($_POST['opcion']==3){
 
@@ -65,7 +65,7 @@ else if ($_POST['opcion']==5){
 	$id_carrera = $_POST['idconcepto'];
 	$id_concepto = $_POST['idcarrera'];
 
-	$cacha = $Seani->VerificaExisteConcepto($id_docente, $id_carrera, $id_concepto, 20);	//se agregó parámetro
+	$cacha = $Seani->VerificaExisteConcepto($id_docente, $id_carrera, $id_concepto, 21);	//se agregó parámetro
 
 	echo $cacha;
 }

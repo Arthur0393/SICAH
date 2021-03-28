@@ -2417,23 +2417,37 @@ function TodaslasCarreraSelect() {
 		echo '</div>';
 }
     
-    function TodaslasCarrerasId(){
-    	//$sql = "SELECT carreras.id, carreras.nombre, carreras.nivel, carreras.abreviatura FROM carreras;";
-    	$sql = "SELECT carrera from director_carrera order by user_ide;";
-		$result = $this->con->query($sql);
-		//$ides = array();
-		$abrevias = array();
+function TodaslasCarrerasId(){
+//$sql = "SELECT carreras.id, carreras.nombre, carreras.nivel, carreras.abreviatura FROM carreras;";
+	$sql = "SELECT carrera from director_carrera order by user_ide;";
+	$result = $this->con->query($sql);
+	//$ides = array();
+	$abrevias = array();
 
-		while($fila = $result->fetch_row()){
-		//	$ides[] = $fila[0];
-			$sql2 = "SELECT carreras.abreviatura from carreras where carreras.id=".$fila[0].";";
-			$result2 = $this->con->query($sql2);
-			$fila2 = $result2->fetch_row();
-			$abrevias[] = $fila2[0];
-		}
+	while($fila = $result->fetch_row()){
+	//	$ides[] = $fila[0];
+		$sql2 = "SELECT carreras.abreviatura from carreras where carreras.id=".$fila[0].";";
+		$result2 = $this->con->query($sql2);
+		$fila2 = $result2->fetch_row();
+		$abrevias[] = $fila2[0];
+	}
 
-		return $abrevias;
-    }
+	return $abrevias;
+}
+
+function TablePTCAdmin($abreviatu, $periodo_actual){
+	$sqlx="SELECT carrera from director_carrera order by user_ide;";
+	$resultx=$this->con->query($sqlx);
+	$i=0;
+	echo "<table class='table table-bordered table-striped' >";
+	echo "<tr><th>Carrera</th><th>Horas de PTC</th><th>Horas de PA</th><th>Horas de Administrativos</th></tr>";
+	while($filax = $resultx->fetch_row()){ 
+		# code...
+		$this->ptcVSpaporCarrera($filax[0],$abreviatu[$i++],$periodo_actual);  //se agreega parametro
+		//echo '<hr>';
+	}
+	echo "</table>";
+}
 	
     
 function CarreraPorDirector($idDirector) {

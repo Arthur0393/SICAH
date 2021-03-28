@@ -133,19 +133,20 @@ ini_set('session.bug_compat_warn',"0");
               <button id="cuenta">PTC / PA</button>
 
               <div id="divCuenta" style="display:none">
-                <?php $abreviatu=$Seani->TodaslasCarrerasId();
+                <?php 
+                  $abreviatu=$Seani->TodaslasCarrerasId();
 
-                    $sqlx="SELECT carrera from director_carrera order by user_ide;";
+                  $Seani->TablePTCAdmin($abreviatu, $periodo_actual);
+
+                    /*$sqlx="SELECT carrera from director_carrera order by user_ide;";
                     $resultx=mysql_query($sqlx);
                     $i=0;
                     echo "<table class='table table-bordered table-striped' >";
                     echo "<tr><th>Carrera</th><th>Horas de PTC</th><th>Horas de PA</th><th>Horas de Administrativos</th></tr>";
                     while($filax = mysql_fetch_row($resultx)){ 
-                      # code...
-                      $Seani->ptcVSpaporCarrera($filax[0],$abreviatu[$i++],$periodo_actual);  //se agreega parametro
-                      //echo '<hr>';
+                      $Seani->ptcVSpaporCarrera($filax[0],$abreviatu[$i++],$periodo_actual);
                     }
-                    echo "</table>";
+                    echo "</table>";*/
 
                  ?>
                 <!--<hr>

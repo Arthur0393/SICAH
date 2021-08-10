@@ -70,7 +70,7 @@
 			echo $idGrupo = $_POST['$idGrupo'];
 			echo "-------------------------";
 			
-			$id_periodo=21;
+			$id_periodo=22;
    			// $idusuario=$_POST['id']; 
 			echo $fecha = date('Y-m-d H:i:s');
 		   $n = count($tutor);

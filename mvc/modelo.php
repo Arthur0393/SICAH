@@ -1277,260 +1277,228 @@ function ObtenerDatosDocentes() {
     }
 
 function ObtenerDatosCargahoraria($id_periodo) {
-	//$id_periodo=9;
-				$sql = "SELECT id_docente,prf_datopersonales.n_empleado , prf_datopersonales.nombre, prf_datopersonales.ap_paterno,prf_datopersonales.ap_materno ,
-						SUM(CASE WHEN id_concepto = 1 THEN horas_asignadas ELSE 0 END) hsemagrupo,
-						SUM(CASE WHEN id_concepto = 2 THEN horas_asignadas ELSE 0 END)  frentegrupo,
-						SUM(CASE WHEN id_concepto = 3 THEN horas_asignadas ELSE 0 END) asesorias,
-						SUM(CASE WHEN id_concepto = 4 THEN horas_asignadas ELSE 0 END) estadias,
-						SUM(CASE WHEN id_concepto = 5 THEN horas_asignadas ELSE 0 END)  tesis,
-						SUM(CASE WHEN id_concepto = 6 THEN horas_asignadas ELSE 0 END)  tutorias,
-						SUM(CASE WHEN id_concepto = 7 THEN horas_asignadas ELSE 0 END) cuerpoacademico,
-						SUM(CASE WHEN id_concepto = 8 THEN horas_asignadas ELSE 0 END) reunionacademica,
-						SUM(CASE WHEN id_concepto = 9 THEN horas_asignadas ELSE 0 END) laboratorios,
-						SUM(CASE WHEN id_concepto = 10 THEN horas_asignadas ELSE 0 END)  finvestigacion,
-						SUM(CASE WHEN id_concepto = 11 THEN horas_asignadas ELSE 0 END) admon,
-						SUM(CASE WHEN id_concepto = 12 THEN horas_asignadas ELSE 0 END) cursoa,
-						SUM(CASE WHEN id_concepto = 13 THEN horas_asignadas ELSE 0 END) difusion,
-						SUM(CASE WHEN id_concepto = 14 THEN horas_asignadas ELSE 0 END) proyectos,
-						SUM(CASE WHEN id_concepto = 15 THEN horas_asignadas ELSE 0 END) cTutor,
-						SUM(CASE WHEN id_concepto = 16 THEN horas_asignadas ELSE 0 END) ptc,
-						SUM(CASE WHEN id_concepto = 17 THEN horas_asignadas ELSE 0 END) pa,
-						SUM(CASE WHEN id_concepto = 18 THEN horas_asignadas ELSE 0 END) inves,
-						SUM(CASE WHEN id_concepto = 19 THEN horas_asignadas ELSE 0 END) didacticos,
-						SUM(CASE WHEN id_concepto = 20 THEN horas_asignadas ELSE 0 END) adminPtc,
-									  user_id,prf_tipo,prf_titulo
-						FROM desglose_carga_horaria,prf_datopersonales 
-						WHERE desglose_carga_horaria.id_docente=prf_datopersonales.id 
-							AND desglose_carga_horaria.id_periodo='$id_periodo'
-						GROUP BY id_docente ;";
-				$result = $this->con->query($sql);
-				$i = 0;
-        while ($fila = $result->fetch_row()) {
-							echo"<tr class='odd gradeX'>";
-							echo" <td>";
-							echo"<a href='profileAdmin.php?idPrf=";
-							echo $idPrf[$i] = $fila[0];
-							echo"&idTabUser=";
-							echo $idTabUser[$i] = $fila[25];
-							echo "'>";
-							echo $NumeroEmpleado[$i] = $fila[1];
-							echo"</a>";
-							echo" </td>";
-							echo"<td> ";
-							echo $Nombre[$i] = $fila[2]." ".$fila[3]." ".$fila[4];
-							echo" </td>";
-							/*echo" <td >";
-							echo $ApellidoPaterno[$i] = $fila[3];
-							echo" </td >";
-							echo" <td>";
-							echo $ApellidoMaterno[$i] = $fila[4];
-							echo" </td>";*/
-							echo" <td>";
-							$Puesto[$i] = $fila[26];
-        					if ($Puesto[$i] == 1) {
-									echo "Administrativo ";
-        					   } 
-							else if ($Puesto[$i] == 2) {
-									echo "Profesor Tiempo Completo ";
-         					   } 
-							else if ($Puesto[$i] == 3) {
-									echo "Profesor por Asignatura ";
-        					   } 
-							else if ($Puesto[$i] == 4) {
-									echo "Director de Área ";
-        					   } 
-							else if ($Puesto[$i] == 5) {
-									echo "Director de Carrera ";
-        					   }
-								echo" </td>";
-							
-								echo" <td>";
-								$grado[$i] = $fila[27];
-        					if ($grado[$i] == 1) {
-								echo "Licenciado";
-    				        } 
-							else if ($grado[$i] == 2) {
-								echo "Ingeniero ";
-    				        } 
-							else if ($grado[$i] == 3) {
-								echo "Especialidad ";
-    				        } 
-							else if ($grado[$i] == 4) {
-								echo "Especialida Medica ";
-    				        } 
-							else if ($grado[$i] == 6) {
-								echo "Maestria ";
-    				        }
-							else if ($grado[$i] == 8) {
-    				            echo "Doctorado ";
-    				        }
-						echo" </td>";
-						//      echo" <td style='font-size : 7pt'>";
-						//             $MateriasImparte = $this->MateriasPorDoceCH($idPrf[$i]);
-						//             echo" </td>";
-						//            echo" <td>";
-						//            echo $hsemagrupo[$i] = $fila[5];
-						//            echo" </td>";
-						
-						/*echo" <td>";
-            
-						//$frentegrupo[$i] = $fila[6];
-            
-						//echo'    <p><a href="javascript: void(0)" onclick="window.open( ';
-						//echo "'materiasImpartidas.php?docente=$idPrf[$i]', 'windowname1', 'width=600, height=600');";
-						//echo ' return false;">';
-						//echo $frentegrupo[$i];
-				
-						$SumaMaterias = $this->SumarMateriasCH($idPrf[$i]);
-						echo $SumaMaterias;
-						//echo '</a></p>';
-                        echo" </td>";*/
-                        echo "<td>";
-                        $MateriasqImparte=$this->MateriasParaAgregar($idPrf[$i],$id_periodo);
-                        echo "</td>";
-                        $SumaMaterias = $this->SumarMateriasCH($idPrf[$i],$id_periodo);
-                        echo "<td>";
-                        echo $SumaMaterias;
-                        echo "</td>";
-                        echo" <td>";
-						echo $asesorias[$i] = $fila[7];
-						echo" </td>";
-                        echo" <td>";
-						echo $estadias[$i] = $fila[8];
-						echo" </td>";
-                        //echo" <td>";
-						//echo $tesis[$i] = $fila[9];
-						//echo" </td>";
-                        echo "<td>";
-                        //echo '<p><a href="javascript: void(0)" onclick="window.open( ';
-						//echo "'TutoriaPorDocenete.php?docente=$idPrf[$i]', 'windowname1', 'width=600, height=600');";
-						//echo ' return false;">';
-						$tutorias[$i] = $fila[10];
-						//echo '</a></p>';						
-						if($tutorias[$i]>0)
-						{
-							echo '<p><a href="javascript: void(0)" onclick="window.open( ';
-							echo "'TutoriaPorDocenete.php?docente=$idPrf[$i]', 'windowname1', 'width=600, height=600');";
-							echo ' return false;">';
-							echo $tutorias[$i];
-							echo '</a></p>';	
-						}else{
-							echo $tutorias[$i];
-						}
-						echo "</td>";
-						$observaciones[$i]="";
-						if($fila[11]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[11]." horas de Cuerpo Academico</br>";
-						}
-						if($fila[12]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[12]." horas de Reunion Academica</br>";
-						}
-						if($fila[13]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[13]." horas de  Laboratorios</br>";
-						}
-						if($fila[14]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[14]." horas de  Investigación</br>";
-						}
-						if($fila[15]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[15]." horas de  Admon ISO</br>";
-						}
-						if($fila[16]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[16]." horas de Curso Actualizacion</br>";
-						}
-						if($fila[17]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[17]." horas de Difusion</br>";
-						}
-						if($fila[19]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[19]." coordinacion de tutores</br>";
-						}
-						if($fila[20]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[20]." proyectos PTC</br>";
-						}
-						if($fila[21]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[21]." proyectos PA</br>";
-						}
-						if($fila[22]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[22]." Investigación y Desarrollo</br>";
-						}
-						if($fila[23]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[23]." Elaboración de Material Didactico</br>";
-						}
-						if($fila[24]>0){
-							$observaciones[$i]=$observaciones[$i]." ".$fila[24]." Horas Administrativas PTC</br>";
-						}
-						if($fila[18]>0){
-							$stringProy='<p><a href="javascript: void(0)" onclick="window.open( ';
-							$stringProy=$stringProy."'DescripcioDeProyectos.php?docente=$idPrf[$i]', 'windowname1', 'width=600, height=600');";
-							$stringProy=$stringProy.' return false;">';
-							$stringProy=$stringProy.$fila[18]." horas de Proyectos";
-							$stringProy=$stringProy.'</a></p>';
-							$observaciones[$i]=$observaciones[$i].$stringProy;
-						}
-						//echo" <td>";
-						$cacademicos[$i] = $fila[11];
-						//echo" </td>";
-                        //echo" <td>";
-						$racademicos[$i] = $fila[12];
-						//echo" </td>"; 
-						//echo" <td>";
-						$tlab[$i] = $fila[13];
-						//echo" </td>"; 
-						//echo" <td>";
-						$investigacion[$i] = $fila[14];
-						//echo" </td>";
-						//echo" <td>";
-						$isos[$i] = $fila[15];
-						//echo" </td>";
-                        //echo" <td>";
-						$actualizacion[$i] = $fila[16];
-						//echo" </td>";
-                        //echo" <td>";
-						$difusion[$i] = $fila[17];
-						//echo" </td>";
-						//echo" <td>";
-						//echo' <p><a href="javascript: void(0)" onclick="window.open( ';
-						//echo "'DescripcioDeProyectos.php?docente=$idPrf[$i]', 'windowname1', 'width=600, height=600');";
-						//echo ' return false;">';
-                        $Proyectos[$i] = $fila[18];
-						//echo '</a></p>';
-						//echo" </td>";
-
+	$sql = "SELECT id_docente, prf_datopersonales.n_empleado , prf_datopersonales.nombre, prf_datopersonales.ap_paterno, prf_datopersonales.ap_materno ,
+		SUM(CASE WHEN id_concepto = 1 THEN horas_asignadas ELSE 0 END) hsemagrupo,
+		SUM(CASE WHEN id_concepto = 2 THEN horas_asignadas ELSE 0 END) frentegrupo,
+		SUM(CASE WHEN id_concepto = 3 THEN horas_asignadas ELSE 0 END) asesorias,
+		SUM(CASE WHEN id_concepto = 4 THEN horas_asignadas ELSE 0 END) estadias,
+		SUM(CASE WHEN id_concepto = 5 THEN horas_asignadas ELSE 0 END) tesis,
+		SUM(CASE WHEN id_concepto = 6 THEN horas_asignadas ELSE 0 END) tutorias,
+		SUM(CASE WHEN id_concepto = 7 THEN horas_asignadas ELSE 0 END) cuerpoacademico,
+		SUM(CASE WHEN id_concepto = 8 THEN horas_asignadas ELSE 0 END) reunionacademica,
+		SUM(CASE WHEN id_concepto = 9 THEN horas_asignadas ELSE 0 END) laboratorios,
+		SUM(CASE WHEN id_concepto = 10 THEN horas_asignadas ELSE 0 END) finvestigacion,
+		SUM(CASE WHEN id_concepto = 11 THEN horas_asignadas ELSE 0 END) admon,
+		SUM(CASE WHEN id_concepto = 12 THEN horas_asignadas ELSE 0 END) cursoa,
+		SUM(CASE WHEN id_concepto = 13 THEN horas_asignadas ELSE 0 END) difusion,
+		SUM(CASE WHEN id_concepto = 32 THEN horas_asignadas ELSE 0 END) proyectos,
+		SUM(CASE WHEN id_concepto = 15 THEN horas_asignadas ELSE 0 END) cTutor,
+		SUM(CASE WHEN id_concepto = 16 THEN horas_asignadas ELSE 0 END) ptc,
+		SUM(CASE WHEN id_concepto = 17 THEN horas_asignadas ELSE 0 END) pa,
+		SUM(CASE WHEN id_concepto = 18 THEN horas_asignadas ELSE 0 END) inves,
+		SUM(CASE WHEN id_concepto = 19 THEN horas_asignadas ELSE 0 END) didacticos,
+		SUM(CASE WHEN id_concepto = 20 THEN horas_asignadas ELSE 0 END) adminPtc,
+		SUM(CASE WHEN id_concepto = 21 THEN horas_asignadas ELSE 0 END) admoni,
+		SUM(CASE WHEN id_concepto = 22 THEN horas_asignadas ELSE 0 END) cEstadias,
+		SUM(CASE WHEN id_concepto = 23 THEN horas_asignadas ELSE 0 END) conocer,
+		SUM(CASE WHEN id_concepto = 24 THEN horas_asignadas ELSE 0 END) mesaT,
+		SUM(CASE WHEN id_concepto = 25 THEN horas_asignadas ELSE 0 END) cAcademia,
+		SUM(CASE WHEN id_concepto = 26 THEN horas_asignadas ELSE 0 END) acreditacion,
+		SUM(CASE WHEN id_concepto = 27 THEN horas_asignadas ELSE 0 END) ceincuba,
+		SUM(CASE WHEN id_concepto = 28 THEN horas_asignadas ELSE 0 END) evaut,
+		SUM(CASE WHEN id_concepto = 30 THEN horas_asignadas ELSE 0 END) investigacion,
+		SUM(CASE WHEN id_concepto = 31 THEN horas_asignadas ELSE 0 END) administrativa,
+			user_id, prf_tipo, prf_titulo
+		FROM desglose_carga_horaria, prf_datopersonales 
+		WHERE desglose_carga_horaria.id_docente=prf_datopersonales.id 
+			AND desglose_carga_horaria.id_periodo='$id_periodo'
+		GROUP BY id_docente ;";
+			$result = $this->con->query($sql);
+			$i = 0;
+          while ($fila = $result->fetch_row()) {
+			echo "<tr class='odd gradeX'>";
+			echo "  <td>";
+			echo "    <a href='profileAdmin.php?idPrf=";
+			echo $idPrf[$i] = $fila[0];
+			echo "    &idTabUser=";
+			echo $idTabUser[$i] = $fila[35];
+			echo "    '>";
+			echo $NumeroEmpleado[$i] = $fila[1];
+			echo "     </a>";
+			echo "  </td>";
+			echo "  <td> ";
+			echo $Nombre[$i] = $fila[2]." ".$fila[3]." ".$fila[4];
+			echo "  </td>";
+			echo "  <td>";
+			$Puesto[$i] = $fila[36];
+			if ($Puesto[$i] == 1) {
+				echo "Administrativo ";
+			} 
+			else if ($Puesto[$i] == 2) {
+				echo "Profesor Tiempo Completo ";
+			} 
+			else if ($Puesto[$i] == 3) {
+				echo "Profesor por Asignatura ";
+			} 
+			else if ($Puesto[$i] == 4) {
+				echo "Director de Área ";
+			} 
+			else if ($Puesto[$i] == 5) {
+				echo "Director de Carrera ";
+			}
+			echo "  </td>";
+			echo "  <td>";
+			$grado[$i] = $fila[37];
+			if ($grado[$i] == 1) {
+				echo "Licenciado";
+			} 
+			else if ($grado[$i] == 2) {
+				echo "Ingeniero ";
+			} 
+			else if ($grado[$i] == 3) {
+				echo "Especialidad ";
+			} 
+			else if ($grado[$i] == 4) {
+				echo "Especialida Medica ";
+			} 
+			else if ($grado[$i] == 6) {
+				echo "Maestria ";
+			}
+			else if ($grado[$i] == 8) {
+				echo "Doctorado ";
+			}
+			echo "  </td>";
+			echo "  <td>";
+			$MateriasqImparte=$this->MateriasParaAgregar($idPrf[$i], $id_periodo);
+			echo "  </td>";
+			$SumaMaterias = $this->SumarMateriasCH($idPrf[$i], $id_periodo);
+			echo "  <td>";
+			echo $SumaMaterias;
+			echo "  </td>";
+			echo "  <td>";
+			echo $asesorias[$i] = $fila[7];
+			echo "  </td>";
+			echo "  <td>";
+			echo $estadias[$i] = $fila[8];
+			echo "  </td>";
+			echo "  <td>";
+			$tutorias[$i] = $fila[10];
+			if($tutorias[$i]>0)
+			{
+				echo '<p><a href="javascript: void(0)" onclick="window.open( ';
+				echo "'TutoriaPorDocenete.php?docente=$idPrf[$i]', 'windowname1', 'width=600, height=600');";
+				echo ' return false;">';
+				echo $tutorias[$i];
+				echo '</a></p>';	
+			}else{
+				echo $tutorias[$i];
+			}
+			echo "  </td>";
+			$observaciones[$i]="";
+			if($fila[11]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[11]." horas de Cuerpo Academico</br>";
+			}
+			if($fila[12]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[12]." horas de Reunion Academica</br>";
+			}
+			if($fila[13]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[13]." horas de Laboratorios</br>";
+			}
+			if($fila[14]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[14]." horas de Investigación</br>";
+			}
+			if($fila[15]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[15]." horas de Admon ISO</br>";
+			}
+			if($fila[16]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[16]." horas de Curso Actualizacion</br>";
+			}
+			if($fila[17]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[17]." horas de Difusion</br>";
+			}
+			if($fila[18]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[17]." horas de Proyecto</br>";
+			}
+			if($fila[19]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[19]." Coordinacion de Tutores</br>";
+			}
+			if($fila[20]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[20]." proyectos PTC</br>";
+			}
+			if($fila[21]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[21]." proyectos PA</br>";
+			}
+			if($fila[22]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[22]." Investigación y Desarrollo</br>";
+			}
+			if($fila[23]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[23]." Elaboración de Material Didactico</br>";
+			}
+			if($fila[24]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[24]." Horas Administrativas PTC</br>";
+			}
+			if($fila[26]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[26]." Coordinación de Estadías</br>";
+			}
+			if($fila[27]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[27]." CONOCER</br>";
+			}
+			if($fila[28]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[28]." Mesa Técnica</br>";
+			}
+			if($fila[29]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[29]." Acreditación</br>";
+			}
+			if($fila[30]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[30]." CEINCUBA</br>";
+			}
+			if($fila[31]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[31]." EVAUT</br>";
+			}
+			if($fila[32]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[32]." Investigación</br>";
+			}
+			if($fila[33]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[33]." Administrativas</br>";
+			}
+			/*if($fila[18]>0){
+				$stringProy='<p><a href="javascript: void(0)" onclick="window.open( ';
+				$stringProy=$stringProy."'DescripcioDeProyectos.php?docente=$idPrf[$i]', 'windowname1', 'width=600, height=600');";
+				$stringProy=$stringProy.' return false;">';
+				$stringProy=$stringProy.$fila[18]." horas de Proyectos";
+				$stringProy=$stringProy.'</a></p>';
+				$observaciones[$i]=$observaciones[$i].$stringProy;
+			}*/
+			/*$cacademicos[$i] = $fila[11];
+			$racademicos[$i] = $fila[12];
+			$tlab[$i] = $fila[13];
+			$investigacion[$i] = $fila[14];
+			$isos[$i] = $fila[15];
+			$actualizacion[$i] = $fila[16];
+			$difusion[$i] = $fila[17];
+			$Proyectos[$i] = $fila[18];*/
                        
-                $sumaTotal = $this->TotalInstitucional($fila[0],$id_periodo);
-
-                /*= $SumaMaterias+$asesorias[$i]+$estadias[$i]+$tesis[$i]+$tutorias[$i]+ $cacademicos[$i]+$racademicos[$i]+$tlab[$i]+$investigacion[$i]+$isos[$i]+$actualizacion[$i]+ $difusion[$i]+$Proyectos[$i];*/
+               $sumaTotal = $this->TotalInstitucional($fila[0],$id_periodo);
                        
-        if($sumaTotal<=40)
-                         echo" <td style='color: #007E3A; font-weight: bold;font-size : 12pt' >";
+			if($sumaTotal<=40){
+				echo" <td style='color: #007E3A; font-weight: bold;font-size : 12pt' >";	
+			}
 			else {
-                         echo" <td style='color:#FF0000; font-weight: bold;font-size : 12pt;'>";
-                         echo "<span class='conVal' >";
-                     }
-                            
-							// echo $frentegrupo[$i] = $fila[18];
-							// $SumaMaterias2=$this->SumarMateriasCH($idPrf[$i]);
-                    		//echo $SumaMaterias;     
-							//  echo settype($SumaMaterias2,'integer');
-                            //   echo   $sumaMateriasyAse= $variableint+$asesorias[$i];
+				echo" <td style='color:#FF0000; font-weight: bold;font-size : 12pt;'>";
+				echo "<span class='conVal' >";
+               }
                          
-						echo  $sumaTotal;
-						echo" </span> </td>";
-						///////////observaciones
-						echo "<td>";
-						echo $observaciones[$i];
-						echo "</td>";
-						echo" </tr>";
+			echo  $sumaTotal;
+			echo " </span> </td>";
+			///////////observaciones
+			echo "  <td>";
+			echo $observaciones[$i];
+			echo "  </td>";
+			echo "</tr>";
             $i++;
-        }
-    }  
+         }
+}  
 
-    
-	
-	
-	
-	
-	
 	
 function TutoPorGrupo($id_docente,$idperiodo) {
 				$sql = "SELECT grupo.grado,grupo.grupo, carreras.abreviatura 
@@ -2612,7 +2580,7 @@ function AdminCargaH() {
                                                   </table>";
     }
 	 
-function ReporteporDirector($idDirector,$id_periodo) {
+function ReporteporDirector($idDirector, $id_periodo) {
 					$sql = "SELECT carreras.id, carreras.nombre, carreras.nivel,carreras.abreviatura  
 							FROM director_carrera, 01_user,carreras
 							WHERE  01_user.id=director_carrera.user_ide and 01_user.id='$idDirector' and carreras.id=director_carrera.carrera;";

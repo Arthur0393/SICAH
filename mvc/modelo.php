@@ -1852,7 +1852,7 @@ function ObtenerDatosCargahorariaPorCarrera($carrera, $id_periodo) {
 				$otras_cosas=$otras_cosas." ".$fila[24]." Horas Administrativas PTC</br>";
 			}*/
 			echo "  <td>";
-			echo $observaciones;
+			echo $observaciones[$i];
 			echo "  </td>";
 			echo "  <td>";
 			$carrera;

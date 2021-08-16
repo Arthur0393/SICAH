@@ -1796,20 +1796,23 @@ function ObtenerDatosCargahorariaPorCarrera($carrera, $id_periodo) {
 			if($fila[28]>0){
 				$observaciones[$i]=$observaciones[$i]." ".$fila[28]." Mesa Técnica</br>";
 			}
+			if($fila[28]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[29]." Coordinación de Academia</br>";
+			}
 			if($fila[29]>0){
-				$observaciones[$i]=$observaciones[$i]." ".$fila[29]." Acreditación</br>";
+				$observaciones[$i]=$observaciones[$i]." ".$fila[30]." Acreditación</br>";
 			}
 			if($fila[30]>0){
-				$observaciones[$i]=$observaciones[$i]." ".$fila[30]." CEINCUBA</br>";
+				$observaciones[$i]=$observaciones[$i]." ".$fila[31]." CEINCUBA</br>";
 			}
 			if($fila[31]>0){
-				$observaciones[$i]=$observaciones[$i]." ".$fila[31]." EVAUT</br>";
+				$observaciones[$i]=$observaciones[$i]." ".$fila[32]." EVAUT</br>";
 			}
 			if($fila[32]>0){
-				$observaciones[$i]=$observaciones[$i]." ".$fila[32]." Investigación</br>";
+				$observaciones[$i]=$observaciones[$i]." ".$fila[33]." Investigación</br>";
 			}
 			if($fila[33]>0){
-				$observaciones[$i]=$observaciones[$i]." ".$fila[33]." Administrativas</br>";
+				$observaciones[$i]=$observaciones[$i]." ".$fila[34]." Administrativas</br>";
 			}
 			/*$otras_cosas="";
 			$cacademicos[$i] = $fila[11];

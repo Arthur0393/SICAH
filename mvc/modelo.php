@@ -1398,6 +1398,9 @@ function ObtenerDatosCargahoraria($id_periodo) {
 			if($fila[11]>0){
 				$observaciones[$i]=$observaciones[$i]." ".$fila[11]." horas de Cuerpo Academico</br>";
 			}
+		  	if($fila[9]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[9]." horas de Asesoría de Tesis</br>";
+			}
 			if($fila[12]>0){
 				$observaciones[$i]=$observaciones[$i]." ".$fila[12]." horas de Reunion Academica</br>";
 			}
@@ -1750,6 +1753,9 @@ function ObtenerDatosCargahorariaPorCarrera($carrera, $id_periodo) {
 			$observaciones[$i]="";
 			if($fila[11]>0){
 				$observaciones[$i]=$observaciones[$i]." ".$fila[11]." horas de Cuerpo Academico</br>";
+			}
+			if($fila[9]>0){
+				$observaciones[$i]=$observaciones[$i]." ".$fila[9]." horas de Asesoría de Tesis</br>";
 			}
 			if($fila[12]>0){
 				$observaciones[$i]=$observaciones[$i]." ".$fila[12]." horas de Reunion Academica</br>";

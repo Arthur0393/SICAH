@@ -79,7 +79,7 @@
   			while ($i < $n){
 
     			"<li>{$reslab[$i]}</li> ";
-				$id_periodo =22;
+				$id_periodo =23;
 				$id_concepto=9;
 				$horas_asignadas=2;
 			    $descripcion1="son asignas de laboratorio de:";

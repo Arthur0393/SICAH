@@ -90,7 +90,7 @@ $horasAseso=$_POST['horas_aseso'];
 //   
   
 $id_conceptoTutor=6;
-$horas_asignadasTutor=2;
+$horas_asignadasTutor=3;
 $descripcion1t="son asignas como tutor del de Grupo :";
 $descripcionTutor= $descripcion1t . $ngrupo[$i]." de la carrera. $id_carrera[$i]";
 

@@ -78,7 +78,7 @@ and open the template in the editor.
 
                      $docente=$_GET['docente'];
                        $carrera=$_GET['carrera'];
-         $Docentes=$Seani-> MatePorDoceCHCarera($docente,$carrera,23);
+         $Docentes=$Seani-> MatePorDoceCHCarera($docente,$carrera,24);
   
         ?>
     </form></div>

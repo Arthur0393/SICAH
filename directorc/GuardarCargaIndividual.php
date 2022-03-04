@@ -76,7 +76,7 @@
 
 	    $actualizacion = date('Y-m-d H:i:s');
         $id_carrera=$_POST['id_carrera'];                        
-		$Seani->VerificaCargaIndividual(23,$id_docente,$id_concepto, $id_carrera, $actualizacion, $horas_asignadas,$descripcion);    
+		$Seani->VerificaCargaIndividual(24,$id_docente,$id_concepto, $id_carrera, $actualizacion, $horas_asignadas,$descripcion);    
 		echo '<script type="text/javascript">';
 	    echo 'alert("Carga Academica capturada con exito");';
 		echo 'window.location.assign("CargaPorDocente.php");';

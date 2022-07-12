@@ -78,7 +78,7 @@ and open the template in the editor.
 
                  
                      $docente=$_GET['docente'];
-         $Docentes=$Seani->TutoPorGrupo($docente,24);
+         $Docentes=$Seani->TutoPorGrupo($docente,25);
      
   
         ?>

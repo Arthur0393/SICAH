@@ -147,7 +147,7 @@ ini_set('session.bug_compat_warn',"0");
                                                       </thead>
                                                       <tbody align="center">
                                                       
-                                                             <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria(24);//se agregó parametro     ?>     
+                                                             <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria(25);//se agregó parametro     ?>     
                                                                 
                                                   
                                             
@@ -234,7 +234,7 @@ ini_set('session.bug_compat_warn',"0");
                                                       </thead>
                                                       <tbody align="center">
                                                 
-                                                                 <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria2(24);//se agregó parametro     ?>     
+                                                                 <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria2(25);//se agregó parametro     ?>     
                                                      
                                                          
                                                        
@@ -291,7 +291,7 @@ ini_set('session.bug_compat_warn',"0");
                                                       </thead>
                                                       <tbody align="center">
                                                 
-                                                                 <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria4(24); //se agregó parametro    ?>     
+                                                                 <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria4(25); //se agregó parametro    ?>     
                                                      
                                                    </tbody>
                                                   </table>
@@ -341,7 +341,7 @@ ini_set('session.bug_compat_warn',"0");
                                                       </thead>
                                                       <tbody align="center">
                                                 
-                                                                 <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria3(24); //se agregó parámetro    ?>     
+                                                                 <?php   echo   $DatosPersonaleTabla = $Seani->ObtenerDatosCargahoraria3(25); //se agregó parámetro    ?>     
                                                      
                                                          
                                                        

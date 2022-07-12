@@ -147,7 +147,7 @@ ini_set('session.bug_compat_warn',"0");
                     <div class="row-fluid">
                        
                            <?php  $idCarre= $_GET['idCarre']; 
-                           $periodo=24;  //cambio de periodo
+                           $periodo=25;  //cambio de periodo
                            
                      $idCarre = $Seani->GruposPorCarrer($idCarre,$periodo);     ?>                                                       
               

@@ -133,7 +133,7 @@
                     <div class="row-fluid">
                        
                            <?php  $idCarre= $_GET['idCarre']; 
-                           $periodo=24;
+                           $periodo=25;
                            
                      $idCarre = $Seani->GruposPorCarrer($idCarre,$periodo);     ?>
                                              

@@ -108,7 +108,7 @@
                         $carR = $con->query("select * from carreras");
 
                         while($fila = $carR->fetch_assoc()){
-                          echo "<option value='".$fila['id']."'>".$fila['nombre']."</option>";
+                          echo "<option value='".$fila['id']."'>".$fila['abreviatura']."</option>";
                         }
 
                        ?>

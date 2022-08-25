@@ -308,7 +308,7 @@ function SelecionarTodosDocentes3() {
 }
     
 function SelecionarTodosDocentes2() {
-	$sql = "SELECT prf_datopersonales.user_id, prf_datopersonales.nombre, prf_datopersonales.ap_paterno, prf_datopersonales.ap_materno FROM prf_datopersonales where prf_tipo <=3 order by prf_datopersonales.ap_paterno asc ;";
+	$sql = "SELECT prf_datopersonales.user_id, prf_datopersonales.nombre, prf_datopersonales.ap_paterno, prf_datopersonales.ap_materno FROM prf_datopersonales where prf_tipo BETWEEN 1 AND 3  order by prf_datopersonales.ap_paterno asc ;";
 	$result = $this->con->query($sql);
 	$i = 0;
 	echo "<select name='docente' data-placeholder='Selecciona un docente...'  chzn-select' tabindex='2' >";

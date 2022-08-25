@@ -1189,7 +1189,7 @@ function obteneMatrizCompetenciaActual2($estatus, $idusuario, $idmateria, $fecha
 	
 function ObtenerDatosDocentes() {
 			$sql = "SELECT n_empleado,prf_titulo,nombre,ap_paterno,ap_materno,genero,email,prf_tipo,estado,municipio,fecha_incorporacion,ultima_actualizacion,id,user_id 
-					FROM prf_datopersonales WHERE n_empleado > 0 order by user_id asc;";
+					FROM prf_datopersonales WHERE n_empleado > 0 AND prf_tipo > 1 order by user_id asc;";
 			$result = $this->con->query($sql);
 			$i = 0;
         while ($fila = $result->fetch_row()) {

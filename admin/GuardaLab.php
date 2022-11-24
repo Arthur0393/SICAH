@@ -71,7 +71,7 @@ $fecha = date('Y-m-d H:i:s');
     "<li>{$reslab[$i]}</li> ";
          
   
- $id_periodo=25;
+ $id_periodo=26;
 $id_concepto=9;
 $horas_asignadas=2;
 
@@ -80,7 +80,7 @@ $horas_asignadas=2;
      $descripcion1="son asignas de laboratorio de:";
    $descripcion= $descripcion1 . $nombrel[$i]. " de la carrera ".$idCarre;
      //$Seani->InsDesgloseCarhora(3,$reslab[$i],$id_concepto,$idCarre,$fecha,$horas_asignadas,$descripcion);
- $Seani->VerificaDesgloseCargaLaboratorios(25,$reslab[$i],$id_concepto,$idCarre,$idLab[$i],$fecha,$horas_asignadas,$descripcion);
+ $Seani->VerificaDesgloseCargaLaboratorios(26,$reslab[$i],$id_concepto,$idCarre,$idLab[$i],$fecha,$horas_asignadas,$descripcion);
 //   echo 'id laboratorio';
 //   echo$idLab[$i];
 //   echo '-Docente:';

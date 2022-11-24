@@ -7,7 +7,7 @@ $var = $_POST['enviaCarrera'];
 
 echo '<label>Alumnos ya asignados a Estadías</label>';
 
-$algo=$Seani->ObtenerSumatoria($var,25);	//se agregó parámetro
+$algo=$Seani->ObtenerSumatoria($var,26);	//se agregó parámetro
 
 echo "<label id='res'>".$algo."</label>";
 
